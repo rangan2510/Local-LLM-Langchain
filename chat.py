@@ -85,4 +85,7 @@ ephemeral_chat_history.add_user_message("What other drugs have the same target?"
 conversational_retrieval_chain.invoke(
     {"messages": ephemeral_chat_history.messages}
 )
+
+ephemeral_chat_history.add_ai_message(response["answer"])
+
 # %%

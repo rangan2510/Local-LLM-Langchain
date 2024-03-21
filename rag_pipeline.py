@@ -29,6 +29,7 @@ Chat History:
 {chat_history}
 Follow Up Input: {question}
 Standalone question:"""
+
 CONDENSE_QUESTION_PROMPT = PromptTemplate.from_template(_template)
 
 template = """Answer the question for clinical decision making purposes. If needed, you may use the following context:

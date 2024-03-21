@@ -49,8 +49,8 @@ print(db.index.ntotal)
 db.save_local("faiss_index")
 
 # %%
-# set db as our vectorstore and check retrieved docs
-vectorstore = db
+# load up saved db as our vectorstore and check retrieved docs
+vectorstore = FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True)
 retriever = vectorstore.as_retriever(k=2)
 docs = retriever.invoke("Clinical trials for Abemaciclib")
 docs

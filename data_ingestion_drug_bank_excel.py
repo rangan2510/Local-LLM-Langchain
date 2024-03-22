@@ -80,7 +80,7 @@ for index, row in drug_bank.iterrows():
                 summary_text = response.text
                 print(summary_text)
 
-                d =  Document(page_content=summary_text, metadata={"source": drug_name})
+                d =  Document(page_content=summary_text, metadata={"source": drug_name,"description": column})
                 docs.append(d)
                 break
             except Exception as e:
@@ -106,10 +106,10 @@ for doc in tqdm(docs):
     db.merge_from(db_)
 
 print(db.index.ntotal)
-db.save_local("faiss_index_summarised_drug_bank_per_col")
+db.save_local("faiss_index_summarised_drug_bank_metadata_changed")
 # %%
 
-! zip -r faiss_index_summarised_drug_bank_per_col.zip faiss_index_summarised_drug_bank_per_col #storing the faiss_index file in the form of zip file.
+! zip -r faiss_index_summarised_drug_bank_metadata_changed.zip faiss_index_summarised_drug_bank_metadata_changed #storing the faiss_index file in the form of zip file.
 
 
 

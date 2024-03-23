@@ -42,7 +42,7 @@ if SUMMARIZE:
 
     for i, doc in enumerate(docs):
         in_prompt = "Summarize the following content in a paragraph while preserving details as much as possible. \
-            Do not talk about any studies in particular, mention the facts in general. Here is teh content: \n" + doc.page_content
+            Do not talk about any studies in particular, mention the facts in general. Here is the content: \n" + doc.page_content
 
         max_retries = 3
         retry_count = 0

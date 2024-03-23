@@ -23,3 +23,6 @@ ollama serve
 ```
 !ollama create biomistral -f Modelfile
 ```
+
+# Python setup
+!pip install langchain langchain-community faiss-cpu langchain-openai tiktoken openpyxl pymed google-generativeai
